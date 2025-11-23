@@ -90,7 +90,6 @@ router.get("/dashboard", async (req, res) => {
         series: selectedSeries,
       };
   
-      // 4) TABLE: totals per shoe
       const tableAgg = await shoeData.aggregate([
         {
           $match: {
@@ -122,8 +121,6 @@ router.get("/dashboard", async (req, res) => {
 
       console.log(tableAgg);
       
-  
-      // 5) GRAND TOTALS
       const grandTotals = {
         sales: tiles.totalSales || 0,
         adCost: tiles.totalAdCost || 0,
@@ -131,7 +128,6 @@ router.get("/dashboard", async (req, res) => {
         clicks: tiles.totalClicks || 0,
       };
   
-      // 6) Final response
       res.json({
         tiles: {
           sales: tiles.totalSales,

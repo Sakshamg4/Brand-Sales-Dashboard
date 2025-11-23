@@ -1,4 +1,3 @@
-// src/App.js
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -18,9 +17,7 @@ function App() {
   const [error, setError] = useState("");
 
   const url = import.meta.env.VITE_URL;
-  console.log(url);
-  
-
+ 
   const metricLabels = {
     sales: "Sales",
     adCost: "Advertising Cost",
@@ -58,7 +55,6 @@ function App() {
       const res = await axios.get(`${url}/dashboard`, {
         params,
       });
-      console.log(res);
       setDashboardData(res.data);
     } catch (err) {
       console.error(err);

@@ -17,10 +17,8 @@ function Filters({
     const alreadySelected = selectedMetrics.includes(metricKey);
 
     if (alreadySelected) {
-      // remove it
       setSelectedMetrics(selectedMetrics.filter((m) => m !== metricKey));
     } else {
-      // add it (but max 2)
       if (selectedMetrics.length >= 2) {
         alert("You can select maximum 2 metrics.");
         return;
